@@ -7,8 +7,10 @@ namespace SaludoFormG2_2024_1
     internal partial class SaludoForm : Form
     {
         private Label lbNombre;
+        private Label lbContador;
         private TextBox txtNombre;
         private Button btnAceptar;
+        private int contador;
         private Button btnLimpiar;
 
 
@@ -24,6 +26,11 @@ namespace SaludoFormG2_2024_1
             lbNombre.Text = "Ingresa tu nombre";
             lbNombre.Location = new Point(200,100);//indica donde se pondra
 
+             //Label contador
+            lbContador = new Label(); //Instanciamos objeto
+            lbContador.Text = "Contador:  " + contador;
+            lbContador.Location = new Point(350,150);//indica donde se pondra
+
             //Buttons
 
 			btnAceptar = new Button(); //Instanciamos objeto
@@ -34,6 +41,7 @@ namespace SaludoFormG2_2024_1
 			btnLimpiar = new Button(); //Instanciamos objeto
 			btnLimpiar.Text = "Limpiar";
 			btnLimpiar.Location = new Point(100, 200);//indica donde se pondra
+            btnLimpiar.Click += new EventHandler(btnLimpiar_Click);
 
 			txtNombre = new TextBox(); //Instanciamos objeto
 			txtNombre.Text = "";
@@ -41,6 +49,8 @@ namespace SaludoFormG2_2024_1
 
 
 			this.Controls.Add(lbNombre);
+
+            this.Controls.Add(lbContador);
 
 			this.Controls.Add(btnLimpiar);
 
